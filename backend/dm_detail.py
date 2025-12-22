@@ -22,7 +22,7 @@ def extract_applic_text_from_xml_bytes(xml_bytes: bytes) -> str | None:
     return None
 
 def load_dm_details(path: str) -> dict:
-    safe = path.replace("\\", "/")
+    path = path.replace("\\", "/")
     p = Path(path)
     if not p.is_absolute():
         p = (BASE_DIR / p).resolve()

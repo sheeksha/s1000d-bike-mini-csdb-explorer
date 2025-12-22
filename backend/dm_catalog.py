@@ -24,7 +24,7 @@ def list_dms(only_dmc: bool = True) -> list[dict]:
             continue
 
         out.append({
-            "path": p,
+            "path": p.replace("\\", "/"),
             "dmCode": dm.get("dmCode"),
             "dmTitle": dm.get("dmTitle"),
             "has_applicability": dm.get("has_applicability", False),
