@@ -15,6 +15,10 @@ def local_name(tag) -> str:
         return tag.split("}", 1)[1]
     return tag
 
+def norm_path(p: str) -> str:
+    # Convert Windows backslashes to Linux-friendly slashes
+    return p.replace("\\", "/") if isinstance(p, str) else p
+
 def text_of(el) -> str:
     return " ".join("".join(el.itertext()).split())
 
@@ -31,10 +35,12 @@ def dmcode_to_path_map(index: dict) -> dict[str, str]:
     return m
 
 def read_xml_root(path_str: str):
+    path_str = norm_path(path_str)
     p = Path(path_str)
     if not p.is_absolute():
         p = (BASE_DIR / p).resolve()
     return etree.fromstring(p.read_bytes())
+
 
 def extract_applic_text(root) -> str | None:
     for el in root.iter():
@@ -105,6 +111,7 @@ def extract_referenced_applic_groups_from_act(act_root) -> dict[str, str]:
     return groups
 
 def eval_dm(path: str, selected: list[str]) -> dict:
+    path = norm_path(path)
     p = Path(path)
     if not p.is_absolute():
         p = (BASE_DIR / p).resolve()
@@ -137,6 +144,7 @@ def eval_dm(path: str, selected: list[str]) -> dict:
     act_dmcode = extract_act_dmcode_from_dm(root)
     if act_dmcode and act_dmcode in dm_map:
         act_path = dm_map[act_dmcode]
+        act_path = norm_path(act_path)
         act_root = read_xml_root(act_path)
 
         act_groups = extract_referenced_applic_groups_from_act(act_root)
