@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dmodule[
+
+<!NOTATION cgm PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN">
+<!NOTATION jpeg PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN">
+<!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN">
+]>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/condcrossreftable.xsd"><rdf:Description><dc:title>Mountain bicycle - Conditions cross-reference table</dc:title>
+<dc:creator>SF815</dc:creator>
+<dc:subject>Mountain bicycle - Conditions cross-reference table</dc:subject>
+<dc:publisher>SF815</dc:publisher>
+<dc:contributor>SF815</dc:contributor>
+<dc:date>2011-01-31</dc:date>
+<dc:type>text</dc:type>
+<dc:format>text/xml</dc:format>
+<dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-00QA-D_005-00</dc:identifier>
+<dc:language>en-US</dc:language>
+<dc:rights>01</dc:rights>
+</rdf:Description>
+
+	
+	<identAndStatusSection>
+		<dmAddress>
+			<dmIdent>
+				<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00Q" infoCodeVariant="A" itemLocationCode="D"/>
+				<language countryIsoCode="US" languageIsoCode="en"/>
+				<issueInfo issueNumber="005" inWork="00"/>
+			</dmIdent>
+			<dmAddressItems>
+				<issueDate day="31" month="12" year="2012"/>
+				<dmTitle>
+					<techName>Mountain bicycle</techName>
+					<infoName>Conditions cross-reference table</infoName>
+				</dmTitle>
+			</dmAddressItems>
+		</dmAddress>
+		<dmStatus issueType="changed">
+			<security securityClassification="01"/>
+			<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+				</restrictionInstructions>
+				<restrictionInfo>
+					<copyright>
+						<copyrightPara>
+							<emphasis>Copyright (C) 2013</emphasis>by each of the following organizations:<randomList>
+								<listItem>
+									<para>AeroSpace and Defence Industries Associations of Europe - ASD.</para>
+								</listItem>
+								<listItem>
+									<para>Ministries of Defence of the member countries of ASD.</para>
+								</listItem></randomList></copyrightPara>
+						<copyrightPara>
+							<emphasis>Limitations of Liability:</emphasis>
+						</copyrightPara>
+						<copyrightPara>
+							<randomList>
+								<listItem>
+									<para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+								</listItem>
+								<listItem>
+									<para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+								</listItem>
+								<listItem>
+									<para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+					</copyright>
+					<policyStatement>TPSMG TOR 001</policyStatement>
+					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+				</restrictionInfo>
+			</dataRestrictions>
+			<responsiblePartnerCompany enterpriseCode="SF815">
+				<enterpriseName>SIOM</enterpriseName>
+			</responsiblePartnerCompany>
+			<originator enterpriseCode="SF815">
+				<enterpriseName>SIOM</enterpriseName>
+			</originator>
+			<applicCrossRefTableRef>
+				<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D">
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="00W" infoCodeVariant="A" itemLocationCode="D"/>
+					</dmRefIdent>
+				</dmRef>
+			</applicCrossRefTableRef>
+			<applic>
+				<displayText>
+					<simplePara>All</simplePara>
+				</displayText>
+			</applic>
+			<brexDmRef><dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent></dmRef></brexDmRef>
+			<qualityAssurance><firstVerification verificationType="tabtop"/></qualityAssurance>
+			<reasonForUpdate>
+				<simplePara>Condition revision number for incorporation status</simplePara>
+				<simplePara>CPF 2009-005AA</simplePara>
+			</reasonForUpdate>
+			<reasonForUpdate id="rfu-001" updateReasonType="urt02">
+				<simplePara>Applicability data typing</simplePara>
+				<simplePara>CPF 2009-061US</simplePara>
+			</reasonForUpdate>
+			<reasonForUpdate id="rfu-002" updateReasonType="urt02">
+				<simplePara>Applic Attributes and Process DM Variables</simplePara>
+				<simplePara>CPF 2009-062US</simplePara>
+			</reasonForUpdate>
+			<reasonForUpdate id="rfu-003" updateReasonType="urt02">
+				<simplePara>CCT Dependency</simplePara>
+				<simplePara>CPF 2009-023AA</simplePara>
+			</reasonForUpdate>
+		</dmStatus>
+	</identAndStatusSection>
+	<content>	
+		<referencedApplicGroup>
+			<!-- The values here are used for dependency checking, not for filtering. It does not indicate the current state of the airplane. The state of the airplane is provided by the IETM. -->
+			<applic id="A-1" reasonForUpdateRefIds="rfu-003">
+				<!-- This will evaluate to true if SB 1 has been applied to the airplane -->
+				<displayText>
+					<simplePara>SB 1</simplePara>
+				</displayText>
+				<assert applicPropertyType="condition" applicPropertyIdent="SB1" applicPropertyValues="POST-001~POST-999"/>
+			</applic>
+			<applic id="A-2">
+				<displayText>
+					<simplePara>POST SB 1 AND PRE SB 9</simplePara>
+				</displayText>
+				<evaluate andOr="and">
+					<assert applicPropertyType="condition" applicPropertyIdent="SB1" applicPropertyValues="POST-001~POST-999"/>
+					<assert applicPropertyType="condition" applicPropertyIdent="SB9" applicPropertyValues="PRE"/>
+				</evaluate>
+			</applic>
+		</referencedApplicGroup>
+		<condCrossRefTable>
+			<condTypeList>
+				<condType id="SB" valueDataType="string" reasonForUpdateRefIds="rfu-001" changeType="modify" changeMark="0">
+					<name>Service bulletin</name>
+					<descr>Generic service bulletin type</descr>
+					<enumeration applicPropertyValues="PRE"/>
+					<enumeration applicPropertyValues="POST-001~POST-999"/>
+				</condType>
+				<!--rfu-002-->
+				<condType id="Boolean">
+					<name>generic Boolean condition</name>
+					<descr>Boolean condition</descr>
+					<enumeration applicPropertyValues="True|False"/>
+				</condType>
+			</condTypeList>
+			<condList>
+				<cond condTypeRefId="SB" id="SB-S001">
+					<name>Service bulletin S001 - Chain guard</name>
+					<descr>Service bulletin S001 for the installation of the chain guard</descr>
+					<refs>
+						<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-A">
+							<dmRefIdent>
+								<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A"/>
+							</dmRefIdent>
+						</dmRef>
+					</refs>
+					<!-- For this <condition> to be POST version 1, (POST-001), The condition specified in "A-1" must be true. -->
+					<dependency forCondValues="POST-001" dependencyTest="A-1"/>
+				</cond>
+				<!--rfu-002-->
+				<cond condTypeRefId="Boolean" id="tourFinished">
+					<name>tour finished</name>
+					<descr>finished tour</descr>
+				</cond>
+			</condList>
+			<incorporation>
+				<condIncorporation condRefId="SB-S001" condIssueNumber="00">
+					<documentIncorporation>
+						<refs>
+							<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-A">
+								<dmRefIdent>
+									<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A"/>
+								</dmRefIdent>
+							</dmRef>
+						</refs>
+						<incorporationStatus incorporationStatus="incorporated" year="2007" month="07" day="31"/>
+					</documentIncorporation>
+				</condIncorporation>
+				<condIncorporation condRefId="SB-S001" condIssueNumber="01">
+					<documentIncorporation>
+						<refs>
+							<dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-A">
+								<dmRefIdent>
+									<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="2" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="520" infoCodeVariant="A" itemLocationCode="A"/>
+								</dmRefIdent>
+							</dmRef>
+						</refs>
+						<incorporationStatus incorporationStatus="noeffect"/>
+					</documentIncorporation>
+				</condIncorporation>
+			</incorporation>
+
+
+		</condCrossRefTable>
+	</content>
+</dmodule>

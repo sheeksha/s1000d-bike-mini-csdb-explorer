@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dmodule[
+
+<!NOTATION cgm PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN">
+<!NOTATION jpeg PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN">
+<!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN">
+]>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/learning.xsd"><rdf:Description><dc:title>Wheels- Description of how it is made: Knowledge Check</dc:title><dc:creator/><dc:subject>Wheels- Description of how it is made: Knowledge Check</dc:subject><dc:publisher>06RT9</dc:publisher><dc:contributor/><dc:date>2011-01-31</dc:date><dc:type>text</dc:type><dc:format>text/xml</dc:format><dc:identifier>S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T61E_001-00</dc:identifier><dc:language>en-US</dc:language><dc:rights>01</dc:rights></rdf:Description>
+  
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="DA0" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="041" infoCodeVariant="A" itemLocationCode="T" learnCode="T61" learnEventCode="E"/>
+        <language countryIsoCode="US" languageIsoCode="en"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate day="31" month="12" year="2012"/>
+        <dmTitle>
+          <techName>Wheels</techName>
+          <infoName>Description of how it is made: Knowledge Check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus>
+      <security securityClassification="01"/><dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+				</restrictionInstructions>
+				<restrictionInfo>
+					<copyright>
+						<copyrightPara>
+							<emphasis>Copyright (C) 2013</emphasis>by each of the following organizations:<randomList>
+								<listItem>
+									<para>AeroSpace and Defence Industries Associations of Europe - ASD.</para>
+								</listItem>
+								<listItem>
+									<para>Ministries of Defence of the member countries of ASD.</para>
+								</listItem></randomList></copyrightPara>
+						<copyrightPara>
+							<emphasis>Limitations of Liability:</emphasis>
+						</copyrightPara>
+						<copyrightPara>
+							<randomList>
+								<listItem>
+									<para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+								</listItem>
+								<listItem>
+									<para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+								</listItem>
+								<listItem>
+									<para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+					</copyright>
+					<policyStatement>TPSMG TOR 001</policyStatement>
+					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+				</restrictionInfo>
+			</dataRestrictions>
+      <responsiblePartnerCompany enterpriseCode="06RT9"/>
+      <originator/>
+      <applic>
+        <displayText/>
+      </applic>
+      <brexDmRef><dmRef xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" xlink:href="URN:S1000D:DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D"><dmRefIdent><dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/></dmRefIdent></dmRef></brexDmRef>
+      <qualityAssurance><unverified/></qualityAssurance>
+      <systemBreakdownCode>DA000</systemBreakdownCode>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <learning>
+      <learningAssessment>
+        <title>Drag-and-Drop Assessment Question</title>
+        <lcInteraction>
+			<lcDragAndDrop>
+            <title/>
+            <lcQuestion>
+              <description>
+                <para>Drag the answer options to the matching questions, and then click CHECK</para>
+              </description>
+            </lcQuestion>
+            <lcMatchTable>
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>Which part of the hub assembly allows wheel components to rotate freely around the axle?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Bearings</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>To which part of the assembly are the spokes attached?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Hub shell</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+              <lcMatchingPair>
+                <lcItem>
+                  <description>
+                    <para>Which part of the hub assembly is attached to the dropouts?</para>
+                  </description>
+                </lcItem>
+                <lcMatchingItem>
+                  <description>
+                    <para>Axle</para>
+                  </description>
+                </lcMatchingItem>
+              </lcMatchingPair>
+            </lcMatchTable>
+			</lcDragAndDrop>
+        </lcInteraction>
+      </learningAssessment>
+    </learning>
+  </content>
+</dmodule>

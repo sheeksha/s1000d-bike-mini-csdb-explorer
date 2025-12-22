@@ -1,0 +1,87 @@
+[
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-009A-A_001-00_EN-US.XML",
+    "raw_text": "All Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-00QA-D_005-00_EN-US.XML",
+    "raw_text": "SB 1 POST SB 1 AND PRE SB 9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-130A-A_003-00_EN-US.XML",
+    "raw_text": "Inexperienced rider has the right answer. Inexperienced rider has the wrong answer.",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1 Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-A_008-00_EN-US.XML",
+    "raw_text": "Mountain bicycle Brook trekker Mk9 Mountain bicycle Mountain storm Mk1",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-258B-A_001-00_EN-US.XML",
+    "raw_text": "Mountain bicycle Brook trekker Mk9 Mountain bicycle Mountain storm Mk1",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-930A-A_001-00_EN-US.XML",
+    "raw_text": "Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-933A-A_001-00_EN-US.XML",
+    "raw_text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D05-10-00-00AA-000A-A_008-00_EN-US.XML",
+    "raw_text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D05-20-00-00AA-000A-A_007-00_EN-US.XML",
+    "raw_text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00EA-D_001-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1 Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00GA-D_001-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1 Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00HA-D_001-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1 Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00NA-D_001-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1 Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-0A2A-D_001-00_EN-US.XML",
+    "raw_text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DME-SF518-CE0701-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+    "raw_text": "Brook trekker Mk9",
+    "ids": {}
+  },
+  {
+    "source": "data\\S1000D_4-1_Bike_Samples\\DME-SF518-MT0701-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+    "raw_text": "Mountain storm Mk1",
+    "ids": {}
+  }
+]

@@ -1,0 +1,2280 @@
+{
+  "dataset_dir": "data\\S1000D_4-1_Bike_Samples",
+  "file_count": 103,
+  "data_modules": [
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DDN-S1000DBIKE-C3002-U8025-2012-00001.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": null,
+      "has_applicability": false,
+      "applicability_signals": {
+        "has_applicability": false,
+        "elements": [],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-BRAKE-AAA-D00-00-00-00AA-00WA-D_001-00_EN-US.XML",
+      "dmCode": "BRAKE-AAA-D00-00-00-00AA-00WA-D",
+      "dmTitle": "Mountain bicycle Applicability cross-reference table",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          },
+          {
+            "name": "applicCrossRefTable",
+            "text": "Brake serial number B/SN Serial number by brake Model The model of the brake"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-BRAKE-AAA-DA1-00-00-00AA-041A-A_001-00_EN-US.XML",
+      "dmCode": "BRAKE-AAA-DA1-00-00-00AA-041A-A",
+      "dmTitle": "Brake system Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-BRAKE-AAA-DA1-00-00-00AA-341A-A_001-00_EN-US.XML",
+      "dmCode": "BRAKE-AAA-DA1-00-00-00AA-341A-A",
+      "dmTitle": "Brake system Manual test",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-BRAKE-AAA-DA1-10-00-00AA-251A-A_001-00_EN-US.XML",
+      "dmCode": "BRAKE-AAA-DA1-10-00-00AA-251A-A",
+      "dmTitle": "Brake pads Clean with rubbing alcohol",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-001A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-001A-A",
+      "dmTitle": "Bicycle Title page",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-002A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-002A-A",
+      "dmTitle": "Bicycle List of effective data modules",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-009A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-009A-A",
+      "dmTitle": "Bicycle Table of contents",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "All Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-00PA-D_005-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-00PA-D",
+      "dmTitle": "Mountain bicycle Products cross-reference table",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-00QA-D_005-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-00QA-D",
+      "dmTitle": "Mountain bicycle Conditions cross-reference table",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "SB 1 POST SB 1 AND PRE SB 9"
+          },
+          {
+            "name": "applic",
+            "text": "SB 1"
+          },
+          {
+            "name": "applic",
+            "text": "POST SB 1 AND PRE SB 9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-00WA-D_006-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-00WA-D",
+      "dmTitle": "Mountain bicycle Applicability cross-reference table",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          },
+          {
+            "name": "applicCrossRefTable",
+            "text": "Serial number SN Serial number (etched on the frame) Serial Number (locate under the bottom bracket where the two pedal cranks meet Type Type of bike Model Model of the bike Versio"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-00XA-A_002-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-00XA-A",
+      "dmTitle": "Bicycle Controls and Indicators",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": "All"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-022A-D_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": "Mountain bicycle Business rules",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-041A-A_009-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-041A-A",
+      "dmTitle": "Bicycle Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-042A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-042A-A",
+      "dmTitle": "Bicycle Description of function",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-043A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-043A-A",
+      "dmTitle": "Bicycle Description attributed to crew",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-0A3A-D_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-0A3A-D",
+      "dmTitle": "Mountain bicycle Applicability cross-reference table catalog",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          },
+          {
+            "name": "applicCrossRefTable",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableCatalog",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-121A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-121A-A",
+      "dmTitle": "Bicycle Pre-operation procedures (crew)",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-130A-A_003-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-130A-A",
+      "dmTitle": "Bicycle Riding a bicycle",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": ""
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Inexperienced rider has the right answer. Inexperienced rider has the wrong answer."
+          },
+          {
+            "name": "applic",
+            "text": "Inexperienced rider has the right answer."
+          },
+          {
+            "name": "applic",
+            "text": "Inexperienced rider has the wrong answer."
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-131A-A",
+      "dmTitle": "Bicycle Normal operation procedures (crew)",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1 Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-151A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-151A-A",
+      "dmTitle": "Bicycle Post-operation procedures (crew)",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T10B_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-200A-T",
+      "dmTitle": "Bicycle Servicing: Attention",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-200A-T-T36D_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-200A-T",
+      "dmTitle": "Bicycle Servicing: Prerequisite concept review",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-258A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-258A-A",
+      "dmTitle": "Bicycle Other procedures to clean",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle Brook trekker Mk9 Mountain bicycle Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle Mountain storm Mk1"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-258B-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-258B-A",
+      "dmTitle": "Bicycle Other procedures to clean",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle Brook trekker Mk9 Mountain bicycle Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle Mountain storm Mk1"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-330A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-330A-A",
+      "dmTitle": "Bicycle Place on test stand",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-663A-A_009-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-663A-A",
+      "dmTitle": "Bicycle Standard repair procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-00AA-952A-T-H31A_002-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-952A-T",
+      "dmTitle": "Bicycle Performance support",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-00-01AA-941A-D_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-01AA-941A-D",
+      "dmTitle": "Bicycle Illustrated Parts Data - IPD",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-341A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-341A-A",
+      "dmTitle": "Fork Manual test",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-520A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-520A-A",
+      "dmTitle": "Fork Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-720A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-720A-A",
+      "dmTitle": "Fork Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-930A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-930A-A",
+      "dmTitle": "Bicycle Service Bulletin - Replacement of standard forward fork by telescopic fork",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-933A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-933A-A",
+      "dmTitle": "Fork Replacement procedure",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and Mountain storm Mk1 Mountain bicycle and Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AA-93AA-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AA-93AA-A",
+      "dmTitle": "Bicycle axis Modification procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D00-00-01-00AB-720A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-01-00AB-720A-A",
+      "dmTitle": "Fork Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D05-10-00-00AA-000A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D05-10-00-00AA-000A-A",
+      "dmTitle": "Bicycle Time limits",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D05-20-00-00AA-000A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D05-20-00-00AA-000A-A",
+      "dmTitle": "Bicycle Scheduled maintenance lists",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-D05-40-00-00AA-000A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D05-40-00-00AA-000A-A",
+      "dmTitle": "Bicycle Scheduled maintenance checks",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-00-00-00AA-041A-A",
+      "dmTitle": "Wheel Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-00-00-00AA-041A-T-T61E_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-00-00-00AA-041A-T",
+      "dmTitle": "Wheels Description of how it is made: Knowledge Check",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-10-00AA-921A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-10-00AA-921A-A",
+      "dmTitle": "Inner tube Remove and install a new item",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-20-00AA-215A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-20-00AA-215A-A",
+      "dmTitle": "Tire Fill with air",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-20-00AA-362B-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-20-00AA-362B-A",
+      "dmTitle": "Tire Check pressure",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-20-00AA-400A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-20-00AA-400A-A",
+      "dmTitle": "Front wheel Fault reports and isolation procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-20-00AA-520A-T-T4JC_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-20-00AA-520A-T",
+      "dmTitle": "Front wheel Remove procedures: Interactive content - Procedure",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-10-20-00AA-921A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-10-20-00AA-921A-A",
+      "dmTitle": "Tire Remove and install a new item",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-20-00-00AA-412A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-20-00-00AA-412A-A",
+      "dmTitle": "Rear wheel Detected fault",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-20-00-00AA-520A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-20-00-00AA-520A-A",
+      "dmTitle": "Rear wheel Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-30-00-00AA-520A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-30-00-00AA-520A-A",
+      "dmTitle": "Front wheel Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA0-30-00-00AA-720A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA0-30-00-00AA-720A-A",
+      "dmTitle": "Front wheel Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA1-00-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA1-00-00-00AA-041A-A",
+      "dmTitle": "Brake system Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA1-00-00-00AA-341A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA1-00-00-00AA-341A-A",
+      "dmTitle": "Brake system Manual test",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA1-10-00-00AA-251A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA1-10-00-00AA-251A-A",
+      "dmTitle": "Brake pads Clean with rubbing alcohol",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA1-20-00-00AA-520A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA1-20-00-00AA-520A-A",
+      "dmTitle": "Front brake Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA1-20-00-00AA-720A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA1-20-00-00AA-720A-A",
+      "dmTitle": "Front brake Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-00-00-00AA-041A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-00-00-00AA-041A-A",
+      "dmTitle": "Steering Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-10-00-00AA-041A-T-T62E_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-10-00-00AA-041A-T",
+      "dmTitle": "Steering Description of how it is made: Knowledge Check",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-10-00-00AA-520A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-10-00-00AA-520A-A",
+      "dmTitle": "Stem Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-10-00-00AA-720A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-10-00-00AA-720A-A",
+      "dmTitle": "Stem Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-20-00-00AA-520A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-20-00-00AA-520A-A",
+      "dmTitle": "Handlebar Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-20-00-00AA-720A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-20-00-00AA-720A-A",
+      "dmTitle": "Handlebar Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-30-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-30-00-00AA-041A-A",
+      "dmTitle": "Headset Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-30-00-00AA-520A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-30-00-00AA-520A-A",
+      "dmTitle": "Headset Remove procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-30-00-00AA-720A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-30-00-00AA-720A-A",
+      "dmTitle": "Headset Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA2-40-00-00AA-720A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA2-40-00-00AA-720A-A",
+      "dmTitle": "Spacer Install procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA3-00-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA3-00-00-00AA-041A-A",
+      "dmTitle": "Frame Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA3-10-00-00AA-411A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA3-10-00-00AA-411A-A",
+      "dmTitle": "Horn Isolated fault",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA3-10-00-00AA-921A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA3-10-00-00AA-921A-A",
+      "dmTitle": "Horn Remove and install a new item",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA4-00-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA4-00-00-00AA-041A-A",
+      "dmTitle": "Drivetrain Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA4-10-00-00AA-241A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA4-10-00-00AA-241A-A",
+      "dmTitle": "Chain Oil",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA4-10-00-00AA-251B-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA4-10-00-00AA-251B-A",
+      "dmTitle": "Chain Clean with chain cleaning fluid",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA4-10-00-00AA-414A-A_005-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA4-10-00-00AA-414A-A",
+      "dmTitle": "Drive train Correlated fault",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA5-00-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA5-00-00-00AA-041A-A",
+      "dmTitle": "Gears Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA5-10-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA5-10-00-00AA-041A-A",
+      "dmTitle": "Mechs Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA5-20-00-00AA-251C-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA5-20-00-00AA-251C-A",
+      "dmTitle": "Hubs Clean with degreasing agent",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DBIKE-AAA-DA5-30-00-00AA-041A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-DA5-30-00-00AA-041A-A",
+      "dmTitle": "Shifters Description of how it is made",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00EA-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-00EA-D",
+      "dmTitle": "Lighting Functional item numbers common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1 Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00GA-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-00GA-D",
+      "dmTitle": "Lighting Parts common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1 Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00HA-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-00HA-D",
+      "dmTitle": "Lighting Zones common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1 Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00NA-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-00NA-D",
+      "dmTitle": "Lighting Support equipment common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1 Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-029A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-029A-A",
+      "dmTitle": "Wiring data Field description",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-040A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-040A-A",
+      "dmTitle": "Electrical system Description of how it is made and its function",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-056A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-056A-A",
+      "dmTitle": "Wiring Equipment lists",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          },
+          {
+            "name": "referencedApplicGroupRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-057A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-057A-A",
+      "dmTitle": "Wiring Wire list",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          },
+          {
+            "name": "referencedApplicGroupRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-058A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-058A-A",
+      "dmTitle": "Wiring Loom list",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          },
+          {
+            "name": "referencedApplicGroupRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-0A1A-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-0A1A-D",
+      "dmTitle": "Lighting Functional and/or physical areas repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-0A2A-D_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-0A2A-D",
+      "dmTitle": "Lighting Applicability common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "All bicycles applicability"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9) Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          },
+          {
+            "name": "applicRepository",
+            "text": ""
+          },
+          {
+            "name": "applicSpec",
+            "text": ""
+          },
+          {
+            "name": "applicSpecIdent",
+            "text": ""
+          },
+          {
+            "name": "applicSpec",
+            "text": ""
+          },
+          {
+            "name": "applicSpecIdent",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-341A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-341A-A",
+      "dmTitle": "Lights Manual test",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-413A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-413A-A",
+      "dmTitle": "Lights Observed fault",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-700A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-700A-A",
+      "dmTitle": "Lighting Assemble, install and connect procedures",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-921A-A_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-00AA-921A-A",
+      "dmTitle": "Lighting Remove and install a new item",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-01AA-012A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-01AA-012A-A",
+      "dmTitle": "Lights Warning repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-01AA-941A-D_007-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-01AA-941A-D",
+      "dmTitle": "Light system Illustrated Parts Data - IPD",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applicRef",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DMC-S1000DLIGHTING-AAA-D00-00-00-02AA-012A-A_001-00_EN-US.XML",
+      "dmCode": "S1000DLIGHTING-AAA-D00-00-00-02AA-012A-A",
+      "dmTitle": "Lights Caution repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": ""
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DME-SF518-CE0701-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-131A-A",
+      "dmTitle": "Bicycle Normal operation procedures (crew)",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Brook trekker Mk9"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Brook trekker Mk9"
+          },
+          {
+            "name": "applic",
+            "text": "Brook trekker Mk9"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DME-SF518-MT0701-S1000DBIKE-AAA-D00-00-00-00AA-131A-A_008-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-131A-A",
+      "dmTitle": "Bicycle Normal operation procedures (crew)",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and Mountain storm Mk1"
+          },
+          {
+            "name": "referencedApplicGroup",
+            "text": "Mountain storm Mk1"
+          },
+          {
+            "name": "applic",
+            "text": "Mountain storm Mk1"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\DML-S1000DBIKE-C3002-C-2012-00001_001-01.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": "Mountain bicycle Applicability cross-reference table",
+      "has_applicability": false,
+      "applicability_signals": {
+        "has_applicability": false,
+        "elements": [],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\PMC-BRAKE-C3002-EPWG1-00_000-01_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": "Mountain bicycle Applicability cross-reference table",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\PMC-S1000DBIKE-C3002-EPWG1-00_000-01_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": "Bicycle Title page",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\PMC-S1000DBIKE-C3002-LOAP1-00_000-01_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": null,
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\PMC-S1000DLIGHTING-C3002-EPWG1-00_000-01_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": "Lighting Functional item numbers common information repository",
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    },
+    {
+      "path": "data\\S1000D_4-1_Bike_Samples\\UPF-S1000DLIGHTING-AAA-D00-00-00-00AA-00GA-D_001-00_EN-US.XML",
+      "dmCode": "S1000DBIKE-AAA-D00-00-00-00AA-022A-D",
+      "dmTitle": null,
+      "has_applicability": true,
+      "applicability_signals": {
+        "has_applicability": true,
+        "elements": [
+          {
+            "name": "applicCrossRefTableRef",
+            "text": ""
+          },
+          {
+            "name": "applic",
+            "text": "Mountain bicycle and (Mountain storm Mk1 or Brook trekker Mk9)"
+          }
+        ],
+        "attributes": []
+      }
+    }
+  ]
+}
