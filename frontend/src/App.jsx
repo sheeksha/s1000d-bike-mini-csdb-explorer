@@ -1,3 +1,4 @@
+import logo from "./assets/logo.png";
 import { useEffect, useMemo, useState } from "react";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
@@ -92,6 +93,7 @@ export default function App() {
   };
 
   useEffect(() => {
+    document.title = "S1000D Mini CSDB Explorer";
     loadDMs();
   }, []);
 
@@ -112,7 +114,10 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: "system-ui", maxWidth: 1100, margin: "0 auto", padding: 20 }}>
-      <h2 style={{ marginBottom: 6 }}>S1000D Bike Mini CSDB Explorer</h2>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
+        <img src={logo} alt="Logo" style={{ height: 36 }} />
+        <h2 style={{ margin: 0 }}>S1000D Bike Mini CSDB Explorer</h2>
+      </div>
       <div style={{ color: "#555", marginBottom: 16 }}>
         Browse Data Modules, filter by applicability, and inspect metadata.
       </div>
