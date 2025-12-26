@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi import Query
 
 from backend.applic_resolver import resolve_applicability
 from backend.notes_mapper import map_engineer_notes, to_procedural_dm_xml
@@ -7,6 +8,7 @@ from backend.dm_catalog import list_dms
 from backend.dm_detail import load_dm_details
 from backend.dm_eval import eval_dm
 from fastapi.middleware.cors import CORSMiddleware
+from backend.proc_preview import extract_dm_preview
 
 app = FastAPI(title="S1000D Applicability Resolver")
 
@@ -59,3 +61,8 @@ def get_dm(path: str):
 def dm_eval(path: str, selected: str = ""):
     labels = [s.strip() for s in selected.split(",") if s.strip()]
     return eval_dm(path, labels)
+
+
+@app.get("/dm-preview")
+def dm_preview(path: str = Query(...)):
+    return extract_dm_preview(path)
