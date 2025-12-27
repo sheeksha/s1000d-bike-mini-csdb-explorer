@@ -42,7 +42,10 @@ export default function App() {
       </div>
     );
 
-    const dmType = (preview.dm_type_guess || "").toLowerCase().trim();
+    const dmType = (preview?.dm_type_guess || "")
+      .toString()
+      .trim()
+      .toLowerCase();
 
     if (dmType === "procedure") {
       return (
@@ -174,100 +177,169 @@ export default function App() {
     }
 
     if (dmType === "frontmatter") {
-      const fm = preview.frontmatter || {};
-      const variant = (fm.variant || "").toLowerCase();
+      const blocks = Array.isArray(preview.blocks) ? preview.blocks : [];
 
-      // A) Title page
-      if (variant === "title_page") {
+      // Title page block (fm01-ish)
+      const tp = blocks.find(b => (b?.type || "").toLowerCase() === "frontmatter_title_page");
+
+      // List block (fm02-ish)
+      const list = blocks.filter(b => (b?.type || "").toLowerCase() === "frontmatter_list");
+
+      if (tp) {
+        const logoUrl = tp.publisher_logo_urn
+          ? `${API_BASE}/icn?urn=${encodeURIComponent(tp.publisher_logo_urn)}`
+          : null;
+
         return (
           <div style={cardStyle}>
             <div style={{ fontSize: 12, color: "#666" }}>
-              Type: <strong>Front matter</strong> · Title page
+              Type: <strong>Front Matter (Title page)</strong>
             </div>
 
-            <div style={{ marginTop: 10, fontWeight: 900, fontSize: 18 }}>
-              {fm.pm_title || preview.dmTitle}
+            <div style={{ marginTop: 10, display: "grid", gap: 6 }}>
+              {!!tp.product_intro_name && (
+                <div style={{ fontWeight: 800, fontSize: 14 }}>{tp.product_intro_name}</div>
+              )}
+
+              {!!tp.pm_title && <div style={{ fontSize: 18, fontWeight: 900 }}>{tp.pm_title}</div>}
+
+              {!!tp.short_pm_title && (
+                <div style={{ fontSize: 12, color: "#555" }}>
+                  Short title: <strong>{tp.short_pm_title}</strong>
+                </div>
+              )}
+
+              {!!tp.models?.length && (
+                <div style={{ marginTop: 8 }}>
+                  <div style={{ fontWeight: 800, marginBottom: 6 }}>Models</div>
+                  <ul style={{ marginTop: 0 }}>
+                    {tp.models.map((m, i) => (
+                      <li key={i}>{m}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {logoUrl && (
+                <div style={{ marginTop: 10 }}>
+                  <div style={{ fontWeight: 800, marginBottom: 6 }}>Publisher Logo</div>
+                  <img
+                    src={logoUrl}
+                    alt="Publisher logo"
+                    style={{
+                      maxWidth: 260,
+                      borderRadius: 10,
+                      border: "1px solid #e5e7eb",
+                      background: "white",
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                  <div style={{ fontSize: 12, color: "#666", marginTop: 6 }}>
+                    If logo doesn’t display, it may be CGM (not supported in browsers).
+                  </div>
+                </div>
+              )}
             </div>
-
-            {fm.product_intro_name && (
-              <div style={{ marginTop: 6, color: "#444" }}>{fm.product_intro_name}</div>
-            )}
-
-            {!!fm.models?.length && (
-              <div style={{ marginTop: 12 }}>
-                <div style={{ fontWeight: 900, marginBottom: 6 }}>Models</div>
-                <ul>
-                  {fm.models.map((m, i) => <li key={i}>{m}</li>)}
-                </ul>
-              </div>
-            )}
-
-            {fm.publisher_logo_urn && (
-              <div style={{ marginTop: 12, fontSize: 12, color: "#666" }}>
-                Publisher logo: <code>{fm.publisher_logo_urn}</code>
-              </div>
-            )}
           </div>
         );
       }
 
-      // B) List of effective DMs (this file)
-      if (variant === "list") {
-        const entries = fm.entries || [];
+      // ---- Front Matter LIST (table) ----
+      if (list.length) {
         return (
           <div style={cardStyle}>
             <div style={{ fontSize: 12, color: "#666" }}>
-              Type: <strong>Front matter</strong> · List ({fm.frontMatterType || "—"})
+              Type: <strong>Front Matter (List)</strong>
             </div>
 
-            <div style={{ marginTop: 10, fontWeight: 900, fontSize: 16 }}>
-              {preview.dmTitle || "List"}
-            </div>
+            {list.map((b, idx) => {
+              const entries = Array.isArray(b.entries) ? b.entries : [];
 
-            <div style={{ marginTop: 10, display: "grid", gap: 10 }}>
-              {entries.map((e, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    padding: 12,
-                    borderRadius: 12,
-                    border: "1px solid #e5e7eb",
-                    background: "#fff",
-                  }}
-                >
-                  <div style={{ fontWeight: 900 }}>
-                    {(e.techName || "—")}{e.infoName ? ` — ${e.infoName}` : ""}
+              return (
+                <div key={idx} style={{ marginTop: 12 }}>
+                  <div style={{ fontWeight: 800, marginBottom: 6 }}>
+                    📄 Front matter list ({b.frontMatterType || "—"})
                   </div>
 
-                  {e.issueDate && (
-                    <div style={{ marginTop: 4, fontSize: 12, color: "#666" }}>
-                      Issue date: {e.issueDate}
-                    </div>
-                  )}
+                  {entries.length === 0 ? (
+                    <div style={{ color: "#666" }}>No entries.</div>
+                  ) : (
+                    <div style={{ overflowX: "auto" }}>
+                      <table
+                        style={{
+                          width: "100%",
+                          borderCollapse: "collapse",
+                          marginTop: 6,
+                        }}
+                      >
+                        <thead>
+                          <tr style={{ textAlign: "left", fontSize: 12, color: "#555" }}>
+                            <th style={{ padding: 8, borderBottom: "1px solid #eee" }}>
+                              Title
+                            </th>
+                            <th style={{ padding: 8, borderBottom: "1px solid #eee" }}>
+                              Issue date
+                            </th>
+                            <th style={{ padding: 8, borderBottom: "1px solid #eee" }}>
+                              URN
+                            </th>
+                          </tr>
+                        </thead>
 
-                  {e.href && (
-                    <div style={{ marginTop: 6, fontSize: 12 }}>
-                      <code>{e.href}</code>
+                        <tbody>
+                          {entries.map((e, i) => (
+                            <tr key={i}>
+                              <td style={{ padding: 8, borderBottom: "1px solid #f2f2f2" }}>
+                                <div style={{ fontWeight: 600 }}>
+                                  {(e.techName || "—") + " — " + (e.infoName || "—")}
+                                </div>
+                              </td>
+
+                              <td
+                                style={{
+                                  padding: 8,
+                                  borderBottom: "1px solid #f2f2f2",
+                                  fontSize: 12,
+                                  color: "#555",
+                                }}
+                              >
+                                {e.issueDate || "—"}
+                              </td>
+
+                              <td
+                                style={{
+                                  padding: 8,
+                                  borderBottom: "1px solid #f2f2f2",
+                                  fontSize: 12,
+                                  fontFamily:
+                                    "ui-monospace, SFMono-Regular, Menlo, monospace",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {e.href || "—"}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
-
-            {!entries.length && (
-              <div style={{ marginTop: 10, color: "#666" }}>No entries found.</div>
-            )}
+              );
+            })}
           </div>
         );
       }
 
-      // fallback for frontmatter
+
       return (
         <div style={cardStyle}>
           <div style={{ fontSize: 12, color: "#666" }}>
-            Type: <strong>Front matter</strong>
+            Type: <strong>Front Matter</strong>
           </div>
-          <div style={{ marginTop: 8 }}>No renderer for this frontmatter variant.</div>
+          <div style={{ marginTop: 8, color: "#666" }}>No front matter blocks found.</div>
         </div>
       );
     }
