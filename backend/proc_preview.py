@@ -178,7 +178,8 @@ def extract_dm_preview(path_str: str) -> dict:
             "blocks": [],
         }
 
-    main_name = local_name(main.tag).lower()
+    
+    main_name = local_name(main.tag).strip().lower()
 
     # ======================================================
     # PROCEDURE DM
@@ -347,81 +348,101 @@ def extract_dm_preview(path_str: str) -> dict:
             "product_attributes": product_attributes
         }
 
+  
     # ======================================================
-    # FRONT MATTER DM (Title page)
+    # FRONTMATTER DM
     # ======================================================
     if main_name == "frontmatter":
-        # frontMatter/frontMatterTitlePage contains most of what we need
+        blocks = []
+
+        # Find frontMatterTitlePage or frontMatterList under <frontMatter>
         title_page = None
-        for el in main.iter():
-            if local_name(el.tag).lower() == "frontmattertitlepage":
-                title_page = el
-                break
+        fm_list = None
 
-        def first_text(tag_name: str) -> str | None:
-            if title_page is None:
-                return None
-            for el in title_page.iter():
-                if local_name(el.tag).lower() == tag_name.lower():
-                    t = text_of(el)
-                    return t or None
-            return None
+        for ch in list(main):
+            n = local_name(ch.tag)
+            if n == "frontMatterTitlePage":
+                title_page = ch
+            elif n == "frontMatterList":
+                fm_list = ch
 
-        pm_title = first_text("pmTitle")
-        short_pm_title = first_text("shortPmTitle")
-
-        # Product intro name is nested: productIntroName/name
-        product_intro = None
+        # ----------------------------
+        # A) frontMatterTitlePage
+        # ----------------------------
         if title_page is not None:
-            for el in title_page.iter():
-                if local_name(el.tag).lower() == "productintroname":
-                    # find inner <name>
-                    for c in el.iter():
-                        if local_name(c.tag).lower() == "name":
-                            product_intro = text_of(c) or None
-                            break
-                    break
+            product_intro_name = text_of(title_page.find(".//{*}productIntroName")) or None
+            pm_title = text_of(title_page.find(".//{*}pmTitle")) or None
+            short_pm_title = text_of(title_page.find(".//{*}shortPmTitle")) or None
 
-        # Collect product models: productAndModel/productModel/modelName/name
-        models = []
-        if title_page is not None:
-            for pm in title_page.iter():
-                if local_name(pm.tag).lower() == "productmodel":
-                    # find <name> under modelName
-                    name_txt = None
-                    for c in pm.iter():
-                        if local_name(c.tag).lower() == "name":
-                            name_txt = text_of(c) or None
-                            break
-                    if name_txt:
-                        models.append(name_txt)
+            models = []
+            for mn in title_page.iter():
+                if local_name(mn.tag) == "modelName":
+                    t = text_of(mn)
+                    if t:
+                        models.append(t)
 
-        # Publisher logo URN (symbol @xlink:href or @infoEntityIdent)
-        publisher_logo_urn = None
-        if title_page is not None:
-            for el in title_page.iter():
-                if local_name(el.tag).lower() == "symbol":
-                    publisher_logo_urn = (
-                        el.get("{http://www.w3.org/1999/xlink}href")
-                        or el.get("xlink:href")
-                        or el.get("infoEntityIdent")
-                        or None
-                    )
-                    break
+            publisher_logo_urn = None
+            sym = title_page.find(".//{*}publisherLogo/{*}symbol")
+            if sym is not None:
+                publisher_logo_urn = sym.get("{http://www.w3.org/1999/xlink}href")
+
+            blocks.append({
+                "type": "frontmatter_title_page",
+                "product_intro_name": product_intro_name,
+                "pm_title": pm_title,
+                "short_pm_title": short_pm_title,
+                "models": models,
+                "publisher_logo_urn": publisher_logo_urn,
+            })
+
+        # ----------------------------
+        # B) frontMatterList (THIS FILE)
+        # ----------------------------
+        if fm_list is not None:
+            entries = []
+            front_matter_type = fm_list.get("frontMatterType")
+
+            for dm_entry in fm_list.iter():
+                if local_name(dm_entry.tag) != "frontMatterDmEntry":
+                    continue
+
+                dmref = dm_entry.find(".//{*}dmRef")
+                if dmref is None:
+                    continue
+
+                href = dmref.get("{http://www.w3.org/1999/xlink}href")
+
+                tech = text_of(dmref.find(".//{*}dmTitle/{*}techName")) or None
+                info = text_of(dmref.find(".//{*}dmTitle/{*}infoName")) or None
+
+                idate = dmref.find(".//{*}dmRefAddressItems/{*}issueDate")
+                issue_date = None
+                if idate is not None:
+                    y, m, d = idate.get("year"), idate.get("month"), idate.get("day")
+                    if y and m and d:
+                        issue_date = f"{y}-{m.zfill(2)}-{d.zfill(2)}"
+
+                entries.append({
+                    "href": href,
+                    "techName": tech,
+                    "infoName": info,
+                    "issueDate": issue_date,
+                })
+
+            blocks.append({
+                "type": "frontmatter_list",
+                "frontMatterType": front_matter_type,
+                "entries": entries,
+            })
 
         return {
             "path": norm_path(path_str),
             "dmCode": meta["dmCode"],
             "dmTitle": meta["dmTitle"],
             "dm_type_guess": "frontmatter",
-            "frontmatter": {
-                "product_intro_name": product_intro,
-                "pm_title": pm_title,
-                "short_pm_title": short_pm_title,
-                "models": models,
-                "publisher_logo_urn": publisher_logo_urn,
-            },
+            "blocks": blocks,
         }
+
 
     # ======================================================
     # BREX DM (Business rules)

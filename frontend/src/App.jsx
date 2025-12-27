@@ -175,57 +175,99 @@ export default function App() {
 
     if (dmType === "frontmatter") {
       const fm = preview.frontmatter || {};
-      const logoUrl = fm.publisher_logo_urn
-        ? `${API_BASE}/icn?urn=${encodeURIComponent(fm.publisher_logo_urn)}`
-        : null;
+      const variant = (fm.variant || "").toLowerCase();
 
-      return (
-        <div style={cardStyle}>
-          <div style={{ fontSize: 12, color: "#666" }}>
-            Type: <strong>Front Matter (Title page)</strong>
-          </div>
+      // A) Title page
+      if (variant === "title_page") {
+        return (
+          <div style={cardStyle}>
+            <div style={{ fontSize: 12, color: "#666" }}>
+              Type: <strong>Front matter</strong> · Title page
+            </div>
 
-          <div style={{ marginTop: 10, display: "grid", gap: 6 }}>
-            {!!fm.product_intro_name && (
-              <div style={{ fontWeight: 800, fontSize: 14 }}>{fm.product_intro_name}</div>
-            )}
+            <div style={{ marginTop: 10, fontWeight: 900, fontSize: 18 }}>
+              {fm.pm_title || preview.dmTitle}
+            </div>
 
-            {!!fm.pm_title && <div style={{ fontSize: 18, fontWeight: 900 }}>{fm.pm_title}</div>}
-
-            {!!fm.short_pm_title && (
-              <div style={{ fontSize: 12, color: "#555" }}>
-                Short title: <strong>{fm.short_pm_title}</strong>
-              </div>
+            {fm.product_intro_name && (
+              <div style={{ marginTop: 6, color: "#444" }}>{fm.product_intro_name}</div>
             )}
 
             {!!fm.models?.length && (
-              <div style={{ marginTop: 8 }}>
-                <div style={{ fontWeight: 800, marginBottom: 6 }}>Models</div>
-                <ul style={{ marginTop: 0 }}>
-                  {fm.models.map((m, i) => (
-                    <li key={i}>{m}</li>
-                  ))}
+              <div style={{ marginTop: 12 }}>
+                <div style={{ fontWeight: 900, marginBottom: 6 }}>Models</div>
+                <ul>
+                  {fm.models.map((m, i) => <li key={i}>{m}</li>)}
                 </ul>
               </div>
             )}
 
-            {logoUrl && (
-              <div style={{ marginTop: 10 }}>
-                <div style={{ fontWeight: 800, marginBottom: 6 }}>Publisher Logo</div>
-                <img
-                  src={logoUrl}
-                  alt="Publisher logo"
-                  style={{ maxWidth: 260, borderRadius: 10, border: "1px solid #e5e7eb", background: "white" }}
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-                <div style={{ fontSize: 12, color: "#666", marginTop: 6 }}>
-                  If logo doesn’t display, it may be CGM (not supported in browsers).
-                </div>
+            {fm.publisher_logo_urn && (
+              <div style={{ marginTop: 12, fontSize: 12, color: "#666" }}>
+                Publisher logo: <code>{fm.publisher_logo_urn}</code>
               </div>
             )}
           </div>
+        );
+      }
+
+      // B) List of effective DMs (this file)
+      if (variant === "list") {
+        const entries = fm.entries || [];
+        return (
+          <div style={cardStyle}>
+            <div style={{ fontSize: 12, color: "#666" }}>
+              Type: <strong>Front matter</strong> · List ({fm.frontMatterType || "—"})
+            </div>
+
+            <div style={{ marginTop: 10, fontWeight: 900, fontSize: 16 }}>
+              {preview.dmTitle || "List"}
+            </div>
+
+            <div style={{ marginTop: 10, display: "grid", gap: 10 }}>
+              {entries.map((e, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: 12,
+                    borderRadius: 12,
+                    border: "1px solid #e5e7eb",
+                    background: "#fff",
+                  }}
+                >
+                  <div style={{ fontWeight: 900 }}>
+                    {(e.techName || "—")}{e.infoName ? ` — ${e.infoName}` : ""}
+                  </div>
+
+                  {e.issueDate && (
+                    <div style={{ marginTop: 4, fontSize: 12, color: "#666" }}>
+                      Issue date: {e.issueDate}
+                    </div>
+                  )}
+
+                  {e.href && (
+                    <div style={{ marginTop: 6, fontSize: 12 }}>
+                      <code>{e.href}</code>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {!entries.length && (
+              <div style={{ marginTop: 10, color: "#666" }}>No entries found.</div>
+            )}
+          </div>
+        );
+      }
+
+      // fallback for frontmatter
+      return (
+        <div style={cardStyle}>
+          <div style={{ fontSize: 12, color: "#666" }}>
+            Type: <strong>Front matter</strong>
+          </div>
+          <div style={{ marginTop: 8 }}>No renderer for this frontmatter variant.</div>
         </div>
       );
     }
