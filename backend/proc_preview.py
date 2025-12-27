@@ -205,6 +205,54 @@ def extract_dm_preview(path_str: str) -> dict:
             "blocks": blocks[:400],  # safety cap
         }
 
+
+    # ======================================================
+    # ACT / Applicability Cross-Reference Table DM
+    # ======================================================
+    if main_name == "appliccrossreftable":
+        product_attributes = []
+
+        # Find productAttribute nodes under productAttributeList
+        for pa in main.iter():
+            if local_name(pa.tag) != "productAttribute":
+                continue
+
+            pid = pa.get("id") or ""
+            name_txt = ""
+            display_txt = ""
+            descr_txt = ""
+            values = []
+
+            for child in pa:
+                cn = local_name(child.tag)
+                if cn == "name":
+                    name_txt = text_of(child)
+                elif cn == "displayName":
+                    display_txt = text_of(child)
+                elif cn == "descr":
+                    descr_txt = text_of(child)
+                elif cn == "enumeration":
+                    v = child.get("applicPropertyValues") or ""
+                    if v:
+                        # values look like "BR01|BR02"
+                        values.extend([x.strip() for x in v.split("|") if x.strip()])
+
+            product_attributes.append({
+                "id": pid or None,
+                "name": name_txt or None,
+                "displayName": display_txt or None,
+                "descr": descr_txt or None,
+                "values": values
+            })
+
+        return {
+            "path": norm_path(path_str),
+            "dmCode": meta["dmCode"],
+            "dmTitle": meta["dmTitle"],
+            "dm_type_guess": "appliccrossreftable",
+            "product_attributes": product_attributes
+        }
+
     # ======================================================
     # OTHER DM TYPES
     # ======================================================

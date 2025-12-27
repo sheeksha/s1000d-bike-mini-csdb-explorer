@@ -9,6 +9,7 @@ from backend.dm_detail import load_dm_details
 from backend.dm_eval import eval_dm
 from fastapi.middleware.cors import CORSMiddleware
 from backend.proc_preview import extract_dm_preview
+from backend.icn_assets import serve_icn_by_urn
 
 app = FastAPI(title="S1000D Applicability Resolver")
 
@@ -66,3 +67,7 @@ def dm_eval(path: str, selected: str = ""):
 @app.get("/dm-preview")
 def dm_preview(path: str = Query(...)):
     return extract_dm_preview(path)
+
+@app.get("/icn")
+def get_icn(urn: str):
+    return serve_icn_by_urn(urn)
