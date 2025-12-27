@@ -739,38 +739,56 @@ export default function App() {
   // UI
   // -------------------------
   return (
-    <div style={{ fontFamily: "system-ui", maxWidth: 1100, margin: "0 auto", padding: 20 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
-        <img src={logo} alt="Logo" style={{ height: 36 }} />
-        <h2 style={{ margin: 0 }}>S1000D Bike Mini CSDB Explorer</h2>
+    <div style={{ fontFamily: "system-ui", maxWidth: 1100, margin: "0 auto", padding: "32px 20px" }}>
+      <div style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "center", justifyContent: "center"}}>
+        <img src={logo} alt="Logo" style={{ height: 38 }} />
+        <h2 style={{ margin: 0, fontWeight: 800 }}>S1000D Bike Mini CSDB Explorer</h2>
       </div>
 
-      <div style={{ color: "#555", marginBottom: 16 }}>
-        Browse Data Modules, filter by applicability, and preview content in a manual-like view.
-      </div>
+      <div style={{ maxWidth: 720, margin: "0 auto 22px", textAlign: "center"}}>
+        <div style={{ fontSize: 15, fontWeight: 600, color: "#222", marginBottom: 6 }}>
+          S1000D Bike CSDB Explorer
+        </div>
 
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+        <div style={{ fontSize: 14, color: "#555", lineHeight: 1.6 }}>
+          Explore and preview S1000D Bike Data Modules in a structured, manual-style viewer.
+        </div>
+
+        <div style={{ fontSize: 12, color: "#777", marginTop: 8 }}>
+          Sample dataset from{" "}
+          <a
+            href="https://users.s1000d.org/Default.aspx"
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontWeight: 600, color: "#555", textDecoration: "none" }}
+          >
+            S1000D.ORG
+          </a>{" "}
+          (S1000D 4.1 Bike Sample)
+        </div>
+      </div>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", maxWidth: 900, margin: "0 auto", justifyContent: "center" }}>
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search dmCode / title..."
-          style={{ padding: 10, flex: "1 1 320px" }}
+          style={{ padding: 10, flex: "1 1 260px", borderRadius: 6,border: "1px solid #ddd" }}
         />
 
         <input
           value={selectedLabels}
           onChange={(e) => setSelectedLabels(e.target.value)}
           placeholder="Applicability labels (comma-separated)"
-          style={{ padding: 10, flex: "2 1 420px" }}
+          style={{ padding: 10, flex: "2 1 360px", borderRadius: 6, border: "1px solid #ddd" }}
         />
 
-        <button onClick={runResolve} style={{ padding: "10px 14px" }}>
+        <button onClick={runResolve} style={{ padding: "10px 16px", borderRadius: 6, fontWeight: 600 }}>
           Filter by Applicability
         </button>
 
         <button
           onClick={clearFilter}
-          style={{ padding: "10px 14px" }}
+          style={{ padding: "10px 16px", borderRadius: 6 }}
           disabled={!applicablePaths}
         >
           Clear Filter
@@ -926,6 +944,38 @@ export default function App() {
             )}
           </div>
         ))}
+      </div>
+      <div
+        style={{
+          marginTop: 24,
+          paddingTop: 14,
+          borderTop: "1px solid #eee",
+          fontSize: 12,
+          color: "#666",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 6,
+          alignItems: "center",
+        }}
+      >
+        <span>
+          Built by <strong>Sheeksha D. Joyseeree</strong> • S1000D Viewer Prototype
+        </span>
+
+        <span>•</span>
+
+        <a
+          href="https://sheeksha-joyseeree-v2.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+          style={{ fontWeight: 700, color: "#111", textDecoration: "none" }}
+        >
+          Portfolio
+        </a>
+
+        <span style={{ marginLeft: "auto" }}>
+          © {new Date().getFullYear()} Sheeksha D. Joyseeree
+        </span>
       </div>
     </div>
   );
