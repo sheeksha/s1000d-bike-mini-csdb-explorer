@@ -55,6 +55,29 @@ def read_root(path_str: str):
     return etree.fromstring(p.read_bytes())
 
 
+def choose_main_content_child(content_el):
+    """
+    Fix: don't assume the first child is the DM type.
+    Many DMs start with <refs> then contain <procedure>, etc.
+    """
+    # Priority order: "real" content types should win over refs
+    priority = [
+        "procedure",
+        "description",
+        "appliccrossreftable",
+    ]
+
+    # Look for a direct child that matches our priority list
+    children = list(content_el)
+    for want in priority:
+        for child in children:
+            if local_name(child.tag).lower() == want:
+                return child
+
+    # Fallback: first child (previous behavior)
+    return children[0] if children else None
+
+
 # -------------------------
 # Main extractor
 # -------------------------
@@ -79,11 +102,8 @@ def extract_dm_preview(path_str: str) -> dict:
             "blocks": [],
         }
 
-    # First real child under <content>
-    main = None
-    for child in content_el:
-        main = child
-        break
+    # Choose the "main" content child (FIXED)
+    main = choose_main_content_child(content_el)
 
     if main is None:
         return {
@@ -120,11 +140,22 @@ def extract_dm_preview(path_str: str) -> dict:
                 if t:
                     notes.append(t)
 
-        for el in main.iter():
-            if local_name(el.tag) == "proceduralStep":
-                t = text_of(el)
-                if t:
-                    steps.append(t)
+        # Collect ONLY direct para text per proceduralStep (no nesting bleed)
+        for step_el in main.iter():
+            if local_name(step_el.tag) != "proceduralStep":
+                continue
+
+            # Ignore parent steps that only wrap other steps
+            paras = []
+            for child in step_el:
+                if local_name(child.tag) == "para":
+                    t = text_of(child)
+                    if t:
+                        paras.append(t)
+
+            if paras:
+                steps.append(" ".join(paras))
+
 
         return {
             "path": norm_path(path_str),
@@ -204,7 +235,6 @@ def extract_dm_preview(path_str: str) -> dict:
             "dm_type_guess": "description",
             "blocks": blocks[:400],  # safety cap
         }
-
 
     # ======================================================
     # ACT / Applicability Cross-Reference Table DM
