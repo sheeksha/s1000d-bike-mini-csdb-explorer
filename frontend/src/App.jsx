@@ -302,84 +302,168 @@ export default function App() {
       );
     }
 
-    // Generic blocks renderer (works for BREX + many other types)
-    if (Array.isArray(preview.blocks) && preview.blocks.length > 0) {
+    if (dmType === "brex") {
+      const intro = preview.intro || {};
+      const rules = preview.context_rules || [];
+      const nonCtx = preview.non_context_rules || [];
+      const rfu = preview.reason_for_update || {};
+
+      const pill = (text) => (
+        <span
+          style={{
+            display: "inline-block",
+            padding: "2px 10px",
+            borderRadius: 999,
+            border: "1px solid #e5e7eb",
+            background: "#f8fafc",
+            fontSize: 12,
+            fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+          }}
+        >
+          {text}
+        </span>
+      );
+
+      const renderRfu = (rfuIds) => {
+        if (!rfuIds) return null;
+        const ids = rfuIds.split(/\s+/).filter(Boolean);
+        if (!ids.length) return null;
+
+        return (
+          <div style={{ marginTop: 8 }}>
+            <div style={{ fontWeight: 800, marginBottom: 6 }}>Reasons for update</div>
+            <div style={{ display: "grid", gap: 8 }}>
+              {ids.map((id) => (
+                <div
+                  key={id}
+                  style={{
+                    padding: 10,
+                    borderRadius: 12,
+                    border: "1px solid #e5e7eb",
+                    background: "#fff",
+                  }}
+                >
+                  <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 12 }}>
+                    {id}
+                  </div>
+                  {(rfu[id] || []).length ? (
+                    <ul style={{ margin: "6px 0 0 18px" }}>
+                      {rfu[id].map((t, i) => (
+                        <li key={i} style={{ lineHeight: 1.4 }}>{t}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div style={{ marginTop: 6, color: "#666", fontSize: 12 }}>No text found for this ID.</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
       return (
         <div style={cardStyle}>
           <div style={{ fontSize: 12, color: "#666" }}>
-            Type: <strong>{preview.dm_type_guess || "unknown"}</strong>
+            Type: <strong>BREX (Business rules)</strong>
           </div>
 
+          {/* Intro */}
           <div style={{ marginTop: 10 }}>
-            {preview.blocks.map((b, idx) => {
-              if (b.type === "heading") {
-                return (
-                  <div key={idx} style={{ fontWeight: 800, fontSize: 16, marginTop: 14 }}>
-                    {b.text}
-                  </div>
-                );
-              }
-              if (b.type === "para") {
-                return (
-                  <p key={idx} style={{ margin: "8px 0", lineHeight: 1.55 }}>
-                    {b.text}
-                  </p>
-                );
-              }
-              if (b.type === "bullet") {
-                return (
-                  <div key={idx} style={{ display: "flex", gap: 10, margin: "6px 0" }}>
-                    <div>•</div>
-                    <div style={{ lineHeight: 1.5 }}>{b.text}</div>
-                  </div>
-                );
-              }
-
-              // Special nice card for BREX rules (but still generic)
-              if (b.type === "brex_rule") {
-                return (
-                  <div
-                    key={idx}
-                    style={{
-                      marginTop: 10,
-                      padding: 10,
-                      borderRadius: 12,
-                      border: "1px solid #e5e7eb",
-                      background: "#fff",
-                    }}
-                  >
-                    {!!b.objectUse && <div style={{ fontWeight: 800 }}>{b.objectUse}</div>}
-                    {!!b.objectPath && (
-                      <div style={{ marginTop: 6, fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 12 }}>
-                        {b.objectPath}
-                      </div>
-                    )}
-
-                    {!!b.objectValues?.length && (
-                      <div style={{ marginTop: 8, display: "grid", gap: 6 }}>
-                        {b.objectValues.map((v, i) => (
-                          <div key={i} style={{ fontSize: 12, color: "#333" }}>
-                            <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>
-                              {v.valueAllowed || "—"}
-                            </span>
-                            {v.valueForm ? <span style={{ color: "#666" }}> • {v.valueForm}</span> : null}
-                            {v.valueTailoring ? <span style={{ color: "#666" }}> • {v.valueTailoring}</span> : null}
-                            {v.text ? <div style={{ marginTop: 2 }}>{v.text}</div> : null}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return null;
-            })}
+            {intro.title && (
+              <div style={{ fontWeight: 900, fontSize: 16, marginBottom: 6 }}>
+                {intro.title}
+              </div>
+            )}
+            {(intro.paras || []).map((p, i) => (
+              <p key={i} style={{ margin: "8px 0", lineHeight: 1.55 }}>
+                {p}
+              </p>
+            ))}
+            {!!intro.bullets?.length && (
+              <ul style={{ marginTop: 6 }}>
+                {intro.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
+            )}
           </div>
+
+          {/* Context Rules */}
+          <div style={{ marginTop: 14 }}>
+            <div style={{ fontWeight: 900, marginBottom: 8 }}>Context rules ({rules.length})</div>
+
+            <div style={{ display: "grid", gap: 10 }}>
+              {rules.slice(0, 200).map((r, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: 12,
+                    borderRadius: 12,
+                    border: "1px solid #e5e7eb",
+                    background: "#fff",
+                  }}
+                >
+                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+                    <div style={{ fontWeight: 900 }}>
+                      {r.objectUse || "(no objectUse)"}
+                    </div>
+                    {r.allowedObjectFlag ? pill(`flag ${r.allowedObjectFlag}`) : null}
+                    {r.changeMark ? pill(`mark ${r.changeMark}`) : null}
+                    {r.changeType ? pill(`${r.changeType}`) : null}
+                  </div>
+
+                  {r.objectPath && (
+                    <div style={{ marginTop: 6, fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 12, color: "#333" }}>
+                      {r.objectPath}
+                    </div>
+                  )}
+
+                  {!!r.values?.length && (
+                    <div style={{ marginTop: 10, display: "grid", gap: 6 }}>
+                      {r.values.map((v, i) => (
+                        <div key={i} style={{ fontSize: 12, color: "#333" }}>
+                          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+                            {v.valueAllowed ? pill(v.valueAllowed) : pill("—")}
+                            {v.valueForm ? pill(v.valueForm) : null}
+                            {v.valueTailoring ? pill(v.valueTailoring) : null}
+                            {v.changeMark ? pill(`mark ${v.changeMark}`) : null}
+                            {v.changeType ? pill(v.changeType) : null}
+                          </div>
+                          {v.text ? <div style={{ marginTop: 4, lineHeight: 1.4 }}>{v.text}</div> : null}
+                          {v.reasonForUpdateRefIds ? renderRfu(v.reasonForUpdateRefIds) : null}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Rule-level RFU */}
+                  {r.reasonForUpdateRefIds ? renderRfu(r.reasonForUpdateRefIds) : null}
+                </div>
+              ))}
+            </div>
+
+            {rules.length > 200 && (
+              <div style={{ marginTop: 10, fontSize: 12, color: "#666" }}>
+                Showing first 200 rules for performance.
+              </div>
+            )}
+          </div>
+
+          {/* Non-context rules */}
+          {!!nonCtx.length && (
+            <div style={{ marginTop: 14 }}>
+              <div style={{ fontWeight: 900, marginBottom: 6 }}>Non-context rules</div>
+              <ul style={{ marginTop: 0 }}>
+                {nonCtx.map((t, i) => (
+                  <li key={i} style={{ lineHeight: 1.45 }}>{t}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       );
     }
-
 
     return (
       <div style={cardStyle}>

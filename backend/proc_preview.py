@@ -424,16 +424,133 @@ def extract_dm_preview(path_str: str) -> dict:
         }
 
     # ======================================================
-    # BREX DM (Business rules) - use generic block rendering
+    # BREX DM (Business rules)
     # ======================================================
     if main_name == "brex":
-        blocks = extract_generic_blocks(main, max_blocks=600)
+        # --- 1) commonInfo (intro narrative) ---
+        intro = {"title": None, "paras": [], "bullets": []}
+
+        common_info = None
+        for el in main:
+            if local_name(el.tag) == "commonInfo":
+                common_info = el
+                break
+
+        if common_info is not None:
+            # title
+            for ch in common_info:
+                if local_name(ch.tag) == "title":
+                    t = text_of(ch)
+                    if t:
+                        intro["title"] = t
+                    break
+
+            # paragraphs and list items
+            for el in common_info.iter():
+                n = local_name(el.tag)
+                if n in ("para", "simplePara"):
+                    t = text_of(el)
+                    if t:
+                        intro["paras"].append(t)
+                elif n == "listItem":
+                    t = text_of(el)
+                    if t:
+                        intro["bullets"].append(t)
+
+        # --- 2) reasonForUpdate: id -> list of paras ---
+        rfu_map = {}  # {"rfu-008": ["text1", "text2"], ...}
+        # note: reasonForUpdate lives in identAndStatusSection, not <content>
+        for el in root.iter():
+            if local_name(el.tag) != "reasonForUpdate":
+                continue
+            rid = el.get("id")
+            if not rid:
+                continue
+            paras = []
+            for p in el.iter():
+                if local_name(p.tag) in ("para", "simplePara"):
+                    t = text_of(p)
+                    if t:
+                        paras.append(t)
+            if paras:
+                rfu_map[rid] = paras
+
+        # --- 3) Context Rules: structureObjectRule ---
+        context_rules = []
+        # find contextRules node
+        ctx = None
+        for el in main.iter():
+            if local_name(el.tag) == "contextRules":
+                ctx = el
+                break
+
+        if ctx is not None:
+            for rule in ctx.iter():
+                if local_name(rule.tag) != "structureObjectRule":
+                    continue
+
+                rule_obj_path = None
+                rule_obj_use = None
+                allowed_flag = None
+                values = []
+
+                # attributes on structureObjectRule itself
+                change_type = rule.get("changeType")
+                change_mark = rule.get("changeMark")
+                rfu_ids = (rule.get("reasonForUpdateRefIds") or "").strip() or None
+
+                # objectPath has allowedObjectFlag attr
+                for ch in rule:
+                    cn = local_name(ch.tag)
+
+                    if cn == "objectPath":
+                        rule_obj_path = text_of(ch) or None
+                        allowed_flag = ch.get("allowedObjectFlag") or None
+
+                    elif cn == "objectUse":
+                        rule_obj_use = text_of(ch) or None
+
+                    elif cn == "objectValue":
+                        values.append({
+                            "valueAllowed": ch.get("valueAllowed"),
+                            "valueForm": ch.get("valueForm"),
+                            "valueTailoring": ch.get("valueTailoring"),
+                            "text": text_of(ch) or None,
+                            "changeType": ch.get("changeType"),
+                            "changeMark": ch.get("changeMark"),
+                            "reasonForUpdateRefIds": (ch.get("reasonForUpdateRefIds") or "").strip() or None,
+                        })
+
+                context_rules.append({
+                    "objectPath": rule_obj_path,
+                    "objectUse": rule_obj_use,
+                    "allowedObjectFlag": allowed_flag,
+                    "changeType": change_type,
+                    "changeMark": change_mark,
+                    "reasonForUpdateRefIds": rfu_ids,
+                    "values": values,
+                })
+
+        # --- 4) Non-context rules ---
+        non_context = []
+        for el in main.iter():
+            if local_name(el.tag) == "nonContextRule":
+                # collect its simplePara content
+                for p in el.iter():
+                    if local_name(p.tag) in ("para", "simplePara"):
+                        t = text_of(p)
+                        if t:
+                            non_context.append(t)
+
         return {
             "path": norm_path(path_str),
             "dmCode": meta["dmCode"],
             "dmTitle": meta["dmTitle"],
             "dm_type_guess": "brex",
-            "blocks": blocks,
+            "intro": intro,
+            "context_rules": context_rules[:1200],   # safety cap
+            "non_context_rules": non_context[:400],  # safety cap
+            "reason_for_update": rfu_map,            # small map, ok
         }
 
     # ======================================================
