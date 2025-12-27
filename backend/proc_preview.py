@@ -65,6 +65,8 @@ def choose_main_content_child(content_el):
         "procedure",
         "description",
         "appliccrossreftable",
+        "frontmatter",
+        "brex",
     ]
 
     # Look for a direct child that matches our priority list
@@ -77,6 +79,68 @@ def choose_main_content_child(content_el):
     # Fallback: first child (previous behavior)
     return children[0] if children else None
 
+def extract_generic_blocks(main, max_blocks: int = 500):
+    """
+    Generic renderer for unknown DM types.
+    Turns common S1000D-ish structures into simple blocks that React can render.
+    """
+    blocks = []
+    for el in main.iter():
+        n = local_name(el.tag)
+
+        # headings
+        if n == "title":
+            t = text_of(el)
+            if t:
+                blocks.append({"type": "heading", "text": t})
+            continue
+
+        # paragraphs
+        if n in ("para", "simplePara"):
+            t = text_of(el)
+            if t:
+                blocks.append({"type": "para", "text": t})
+            continue
+
+        # list items
+        if n == "listItem":
+            t = text_of(el)
+            if t:
+                blocks.append({"type": "bullet", "text": t})
+            continue
+
+        # BREX rules (very useful to show!)
+        if n == "structureObjectRule":
+            obj_path = ""
+            obj_use = ""
+            obj_values = []
+
+            for c in el:
+                cn = local_name(c.tag)
+                if cn == "objectPath":
+                    obj_path = text_of(c)
+                elif cn == "objectUse":
+                    obj_use = text_of(c)
+                elif cn == "objectValue":
+                    obj_values.append({
+                        "valueAllowed": c.get("valueAllowed"),
+                        "valueForm": c.get("valueForm"),
+                        "valueTailoring": c.get("valueTailoring"),
+                        "text": text_of(c) or None,
+                    })
+
+            blocks.append({
+                "type": "brex_rule",
+                "objectPath": obj_path or None,
+                "objectUse": obj_use or None,
+                "objectValues": obj_values,
+            })
+            continue
+
+        if len(blocks) >= max_blocks:
+            break
+
+    return blocks
 
 # -------------------------
 # Main extractor
@@ -284,12 +348,102 @@ def extract_dm_preview(path_str: str) -> dict:
         }
 
     # ======================================================
+    # FRONT MATTER DM (Title page)
+    # ======================================================
+    if main_name == "frontmatter":
+        # frontMatter/frontMatterTitlePage contains most of what we need
+        title_page = None
+        for el in main.iter():
+            if local_name(el.tag).lower() == "frontmattertitlepage":
+                title_page = el
+                break
+
+        def first_text(tag_name: str) -> str | None:
+            if title_page is None:
+                return None
+            for el in title_page.iter():
+                if local_name(el.tag).lower() == tag_name.lower():
+                    t = text_of(el)
+                    return t or None
+            return None
+
+        pm_title = first_text("pmTitle")
+        short_pm_title = first_text("shortPmTitle")
+
+        # Product intro name is nested: productIntroName/name
+        product_intro = None
+        if title_page is not None:
+            for el in title_page.iter():
+                if local_name(el.tag).lower() == "productintroname":
+                    # find inner <name>
+                    for c in el.iter():
+                        if local_name(c.tag).lower() == "name":
+                            product_intro = text_of(c) or None
+                            break
+                    break
+
+        # Collect product models: productAndModel/productModel/modelName/name
+        models = []
+        if title_page is not None:
+            for pm in title_page.iter():
+                if local_name(pm.tag).lower() == "productmodel":
+                    # find <name> under modelName
+                    name_txt = None
+                    for c in pm.iter():
+                        if local_name(c.tag).lower() == "name":
+                            name_txt = text_of(c) or None
+                            break
+                    if name_txt:
+                        models.append(name_txt)
+
+        # Publisher logo URN (symbol @xlink:href or @infoEntityIdent)
+        publisher_logo_urn = None
+        if title_page is not None:
+            for el in title_page.iter():
+                if local_name(el.tag).lower() == "symbol":
+                    publisher_logo_urn = (
+                        el.get("{http://www.w3.org/1999/xlink}href")
+                        or el.get("xlink:href")
+                        or el.get("infoEntityIdent")
+                        or None
+                    )
+                    break
+
+        return {
+            "path": norm_path(path_str),
+            "dmCode": meta["dmCode"],
+            "dmTitle": meta["dmTitle"],
+            "dm_type_guess": "frontmatter",
+            "frontmatter": {
+                "product_intro_name": product_intro,
+                "pm_title": pm_title,
+                "short_pm_title": short_pm_title,
+                "models": models,
+                "publisher_logo_urn": publisher_logo_urn,
+            },
+        }
+
+    # ======================================================
+    # BREX DM (Business rules) - use generic block rendering
+    # ======================================================
+    if main_name == "brex":
+        blocks = extract_generic_blocks(main, max_blocks=600)
+        return {
+            "path": norm_path(path_str),
+            "dmCode": meta["dmCode"],
+            "dmTitle": meta["dmTitle"],
+            "dm_type_guess": "brex",
+            "blocks": blocks,
+        }
+
+    # ======================================================
     # OTHER DM TYPES
     # ======================================================
+    blocks = extract_generic_blocks(main, max_blocks=400)
     return {
         "path": norm_path(path_str),
         "dmCode": meta["dmCode"],
         "dmTitle": meta["dmTitle"],
         "dm_type_guess": main_name,
-        "blocks": [],
+        "blocks": blocks,
     }

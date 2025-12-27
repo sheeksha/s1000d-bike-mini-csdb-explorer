@@ -20,6 +20,8 @@ export default function App() {
 
   const [appliesInfo, setAppliesInfo] = useState(null);
 
+  
+
   // -------------------------
   // Manual preview renderer
   // -------------------------
@@ -40,7 +42,9 @@ export default function App() {
       </div>
     );
 
-    if (preview.dm_type_guess === "procedure") {
+    const dmType = (preview.dm_type_guess || "").toLowerCase().trim();
+
+    if (dmType === "procedure") {
       return (
         <div style={cardStyle}>
           <div style={{ fontSize: 12, color: "#666" }}>
@@ -90,7 +94,7 @@ export default function App() {
       );
     }
 
-    if (preview.dm_type_guess === "description") {
+    if (dmType === "description") {
       return (
         <div style={cardStyle}>
           <div style={{ fontSize: 12, color: "#666" }}>
@@ -169,8 +173,64 @@ export default function App() {
       );
     }
 
+    if (dmType === "frontmatter") {
+      const fm = preview.frontmatter || {};
+      const logoUrl = fm.publisher_logo_urn
+        ? `${API_BASE}/icn?urn=${encodeURIComponent(fm.publisher_logo_urn)}`
+        : null;
 
-    if (preview.dm_type_guess === "appliccrossreftable") {
+      return (
+        <div style={cardStyle}>
+          <div style={{ fontSize: 12, color: "#666" }}>
+            Type: <strong>Front Matter (Title page)</strong>
+          </div>
+
+          <div style={{ marginTop: 10, display: "grid", gap: 6 }}>
+            {!!fm.product_intro_name && (
+              <div style={{ fontWeight: 800, fontSize: 14 }}>{fm.product_intro_name}</div>
+            )}
+
+            {!!fm.pm_title && <div style={{ fontSize: 18, fontWeight: 900 }}>{fm.pm_title}</div>}
+
+            {!!fm.short_pm_title && (
+              <div style={{ fontSize: 12, color: "#555" }}>
+                Short title: <strong>{fm.short_pm_title}</strong>
+              </div>
+            )}
+
+            {!!fm.models?.length && (
+              <div style={{ marginTop: 8 }}>
+                <div style={{ fontWeight: 800, marginBottom: 6 }}>Models</div>
+                <ul style={{ marginTop: 0 }}>
+                  {fm.models.map((m, i) => (
+                    <li key={i}>{m}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {logoUrl && (
+              <div style={{ marginTop: 10 }}>
+                <div style={{ fontWeight: 800, marginBottom: 6 }}>Publisher Logo</div>
+                <img
+                  src={logoUrl}
+                  alt="Publisher logo"
+                  style={{ maxWidth: 260, borderRadius: 10, border: "1px solid #e5e7eb", background: "white" }}
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                <div style={{ fontSize: 12, color: "#666", marginTop: 6 }}>
+                  If logo doesn’t display, it may be CGM (not supported in browsers).
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    if (dmType === "appliccrossreftable") {
       const attrs = preview.product_attributes || [];
 
       return (
@@ -242,11 +302,89 @@ export default function App() {
       );
     }
 
+    // Generic blocks renderer (works for BREX + many other types)
+    if (Array.isArray(preview.blocks) && preview.blocks.length > 0) {
+      return (
+        <div style={cardStyle}>
+          <div style={{ fontSize: 12, color: "#666" }}>
+            Type: <strong>{preview.dm_type_guess || "unknown"}</strong>
+          </div>
+
+          <div style={{ marginTop: 10 }}>
+            {preview.blocks.map((b, idx) => {
+              if (b.type === "heading") {
+                return (
+                  <div key={idx} style={{ fontWeight: 800, fontSize: 16, marginTop: 14 }}>
+                    {b.text}
+                  </div>
+                );
+              }
+              if (b.type === "para") {
+                return (
+                  <p key={idx} style={{ margin: "8px 0", lineHeight: 1.55 }}>
+                    {b.text}
+                  </p>
+                );
+              }
+              if (b.type === "bullet") {
+                return (
+                  <div key={idx} style={{ display: "flex", gap: 10, margin: "6px 0" }}>
+                    <div>•</div>
+                    <div style={{ lineHeight: 1.5 }}>{b.text}</div>
+                  </div>
+                );
+              }
+
+              // Special nice card for BREX rules (but still generic)
+              if (b.type === "brex_rule") {
+                return (
+                  <div
+                    key={idx}
+                    style={{
+                      marginTop: 10,
+                      padding: 10,
+                      borderRadius: 12,
+                      border: "1px solid #e5e7eb",
+                      background: "#fff",
+                    }}
+                  >
+                    {!!b.objectUse && <div style={{ fontWeight: 800 }}>{b.objectUse}</div>}
+                    {!!b.objectPath && (
+                      <div style={{ marginTop: 6, fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 12 }}>
+                        {b.objectPath}
+                      </div>
+                    )}
+
+                    {!!b.objectValues?.length && (
+                      <div style={{ marginTop: 8, display: "grid", gap: 6 }}>
+                        {b.objectValues.map((v, i) => (
+                          <div key={i} style={{ fontSize: 12, color: "#333" }}>
+                            <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>
+                              {v.valueAllowed || "—"}
+                            </span>
+                            {v.valueForm ? <span style={{ color: "#666" }}> • {v.valueForm}</span> : null}
+                            {v.valueTailoring ? <span style={{ color: "#666" }}> • {v.valueTailoring}</span> : null}
+                            {v.text ? <div style={{ marginTop: 2 }}>{v.text}</div> : null}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return null;
+            })}
+          </div>
+        </div>
+      );
+    }
+
 
     return (
       <div style={cardStyle}>
         <div style={{ fontSize: 12, color: "#666" }}>
-          Type: <strong>{preview.dm_type_guess || "unknown"}</strong>
+          Type: <strong>{dmType || "unknown"}</strong>
         </div>
         <div style={{ marginTop: 8, color: "#666" }}>No preview renderer for this type yet.</div>
       </div>
@@ -293,8 +431,8 @@ export default function App() {
 
     // 1) DM preview
     try {
-      const url = `${API_BASE}/dm-preview?path=${encodeURIComponent(dm.path)}`;
-      const res = await fetch(url);
+      const url = `${API_BASE}/dm-preview?path=${encodeURIComponent(dm.path)}&t=${Date.now()}`;
+      const res = await fetch(url, { cache: "no-store" });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.detail || "Failed to load DM preview");
       setDmPreview(data);
